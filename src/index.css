@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #06080f;
+    color: #f1f5f9;
+  }
+  
+  .font-hud {
+    font-family: 'Chakra Petch', sans-serif;
+  }
+
+  /* High-contrast shadow under large frameless numbers */
+  .hud-giant-number {
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 1),
+      0 4px 12px rgba(0, 0, 0, 0.98),
+      0 8px 26px rgba(0, 0, 0, 0.95),
+      0 0 24px rgba(0, 0, 0, 0.9);
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.98));
+  }
+
+  .hud-contrast-text {
+    text-shadow: 
+      0 1px 3px rgba(0, 0, 0, 1),
+      0 2px 8px rgba(0, 0, 0, 0.95),
+      0 4px 16px rgba(0, 0, 0, 0.9);
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95));
+  }
+}
+
+/* JAIKLA ACTIVE Signature Neon Cyber & High-Performance HUD Glows */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.45), inset 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.35);
+}
+
+.glow-violet {
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.45), inset 0 0 16px rgba(168, 85, 247, 0.2);
+}
+
+.glow-jaikla {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.35), 0 0 50px rgba(139, 92, 246, 0.3);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 22px rgba(16, 185, 129, 0.4), inset 0 0 14px rgba(16, 185, 129, 0.15);
+}
+
+.glow-rose {
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.45), inset 0 0 15px rgba(244, 63, 94, 0.15);
+}
+
+/* Legacy alias mappings for backwards compatibility */
+.hud-glow-cyan {
+  box-shadow: 0 0 24px rgba(6, 182, 212, 0.4), inset 0 0 16px rgba(6, 182, 212, 0.15);
+}
+
+.hud-glow-violet {
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.45), inset 0 0 16px rgba(168, 85, 247, 0.2);
+}
+
+.hud-glow-purple {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5), inset 0 0 20px rgba(192, 132, 252, 0.2);
+}
+
+.hud-glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.35), inset 0 0 15px rgba(16, 185, 129, 0.12);
+}
+
+.hud-glow-rose {
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.45), inset 0 0 15px rgba(244, 63, 94, 0.15);
+}
+
+/* Ambient Radial Glow on Dark Stealth Obsidian Horizon matching JAIKLA ACTIVE artwork */
+.bg-ambient-jaikla {
+  background: 
+    radial-gradient(circle at 15% 0%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 5%, rgba(139, 92, 246, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 50% 100%, rgba(124, 58, 237, 0.08) 0%, transparent 60%),
+    #06080f;
+}
+
+/* Backwards compatibility */
+.bg-ambient-violet {
+  background: 
+    radial-gradient(circle at 15% 0%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 5%, rgba(139, 92, 246, 0.18) 0%, transparent 55%),
+    #06080f;
+}
+
+/* Stealth angle lines & grid matching the background texture of the logo */
+.jaikla-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.035) 1px, transparent 1px);
+}
+
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.035) 1px, transparent 1px);
+}
+
+/* Athletic Glass Card Style */
+.jaikla-card {
+  background: rgba(10, 15, 26, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(6, 182, 212, 0.22);
+}
+
+/* Custom scrollbars with sleek cyan & violet accents */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06080f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1b4b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}

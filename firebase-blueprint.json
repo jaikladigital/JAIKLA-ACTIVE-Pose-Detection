@@ -1,0 +1,145 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with body calibration measurements",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "User authentication UID"
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Display name of the athlete"
+        },
+        "calibrated": {
+          "type": "boolean",
+          "description": "Whether T-pose calibration has been performed"
+        },
+        "armSpanRatio": {
+          "type": "number",
+          "description": "Calculated arm span to height ratio from T-pose"
+        },
+        "torsoRatio": {
+          "type": "number",
+          "description": "Calculated torso length ratio from T-pose"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last profile update timestamp"
+        }
+      },
+      "required": ["userId", "displayName"]
+    },
+    "WorkoutSession": {
+      "title": "WorkoutSession",
+      "description": "Completed or ongoing workout recording session",
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string",
+          "description": "Unique session ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "User UID who performed workout"
+        },
+        "exerciseType": {
+          "type": "string",
+          "enum": ["squat", "pushup", "lunge", "jumping_jack", "plank"],
+          "description": "Exercise type analyzed"
+        },
+        "repsCount": {
+          "type": "number",
+          "description": "Total successfully completed reps"
+        },
+        "avgAccuracy": {
+          "type": "number",
+          "description": "Average form accuracy percentage 0-100"
+        },
+        "durationSeconds": {
+          "type": "number",
+          "description": "Duration of the workout in seconds"
+        },
+        "caloriesBurned": {
+          "type": "number",
+          "description": "Estimated calories burned"
+        },
+        "mistakesSummary": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Summary of common form faults detected"
+        },
+        "aiFeedback": {
+          "type": "string",
+          "maxLength": 1000,
+          "description": "AI Coach feedback and recommendations"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of session completion"
+        }
+      },
+      "required": ["sessionId", "userId", "exerciseType", "repsCount", "avgAccuracy", "durationSeconds"]
+    },
+    "MotionClip": {
+      "title": "MotionClip",
+      "description": "Short recorded workout motion video clip for Before/After comparison",
+      "type": "object",
+      "properties": {
+        "clipId": {
+          "type": "string",
+          "description": "Unique clip identifier"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner UID"
+        },
+        "exerciseType": {
+          "type": "string",
+          "description": "Exercise in this clip"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["before", "after", "practice"],
+          "description": "Comparison category tag"
+        },
+        "accuracyScore": {
+          "type": "number",
+          "description": "Score during clip recording"
+        },
+        "videoData": {
+          "type": "string",
+          "maxLength": 500000,
+          "description": "Base64 or blob URL of short video clip"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "User or coach notes on form"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp"
+        }
+      },
+      "required": ["clipId", "userId", "exerciseType", "category", "accuracyScore"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profiles and calibration data"
+    },
+    "/workouts/{sessionId}": {
+      "schema": "WorkoutSession",
+      "description": "Workout sessions history"
+    },
+    "/motionClips/{clipId}": {
+      "schema": "MotionClip",
+      "description": "Recorded video clips for Before/After analysis"
+    }
+  }
+}

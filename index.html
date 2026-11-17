@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="th" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAIKLA ACTIVE Pose Detection - ระบบวิเคราะห์การเคลื่อนไหวและท่าออกกำลังกายอัจฉริยะ</title>
+    <meta name="description" content="JAIKLA ACTIVE Pose Detection - ระบบวิเคราะห์การเคลื่อนไหวและท่าออกกำลังกายอัจฉริยะ ด้วย AI Computer Vision, คาลิเบรต T-Pose, ตรวจสอบมุมองศาความถูกต้อง, แจ้งเตือนด้วยเสียง, บันทึกประวัติและคลิปวิดีโอเปรียบเทียบ Before/After" />
+    <meta property="og:title" content="JAIKLA ACTIVE Pose Detection - ระบบวิเคราะห์การเคลื่อนไหวและท่าออกกำลังกายอัจฉริยะ" />
+    <meta property="og:description" content="JAIKLA ACTIVE Pose Detection - ระบบวิเคราะห์การเคลื่อนไหวและท่าออกกำลังกายอัจฉริยะ ด้วย AI Computer Vision, คาลิเบรต T-Pose, ตรวจสอบมุมองศาความถูกต้อง, แจ้งเตือนด้วยเสียง, บันทึกประวัติและคลิปวิดีโอเปรียบเทียบ Before/After" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JAIKLA ACTIVE Pose Detection" />
+    <meta name="twitter:description" content="MOVE BETTER • LIVE BETTER - ระบบวิเคราะห์การเคลื่อนไหวและท่าออกกำลังกายเรียลไทม์" />
+    
+    <!-- Google Fonts for Cyber-Athletic UI & Thai typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,400&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- MediaPipe Pose JS via official CDN for high-precision real-time 33-keypoint tracking -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.4.1675466862/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5.1675469404/pose.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-[#06080f] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-slate-950">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

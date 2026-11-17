@@ -1,0 +1,11 @@
+{
+  "name": "JAIKLA ACTIVE Pose Detection",
+  "description": "JAIKLA ACTIVE Pose Detection - ระบบวิเคราะห์การเคลื่อนไหวและท่าออกกำลังกายอัจฉริยะ ด้วย AI Computer Vision, คาลิเบรต T-Pose, ตรวจสอบมุมองศาความถูกต้อง, แจ้งเตือนด้วยเสียง, บันทึกประวัติและคลิปวิดีโอเปรียบเทียบ Before/After",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
